@@ -5,11 +5,11 @@ updates:
   - package-ecosystem: "nuget"
     directory: "/7" #Grains.UnitTests.csproj
     schedule:
-      interval: "live"
+      interval: "daily"
     open-pull-requests-limit: 5
   - package-ecosystem: "nuget"
     directory: "/1" #Grains.UnitTests.csproj
     schedule:
-      interval: "live"
+      interval: "daily"
     open-pull-requests-limit: 5
     target-branch: solution1
