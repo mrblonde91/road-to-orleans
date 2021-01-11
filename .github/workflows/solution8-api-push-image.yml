@@ -1,4 +1,4 @@
-name: Build Silo Host
+name: Push API
 
 on:
   push:
@@ -23,6 +23,7 @@ jobs:
 
       - name: Build image
         run: docker build . --file ./8/ops/Api/Dockerfile --tag $IMAGE_NAME
+        working-directory: ./8
 
       - name: Log into registry
         run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login docker.pkg.github.com -u ${{ github.actor }} --password-stdin
