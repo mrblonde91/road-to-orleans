@@ -22,7 +22,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Build image
-        run: docker build . --file ./8/ops/Api/Dockerfile --tag $IMAGE_NAME:${ github.run_id	}
+        run: docker build . --file ./ops/Api/Dockerfile --tag $IMAGE_NAME:${ github.run_id	}
         working-directory: ./8
 
       - name: Log into registry
