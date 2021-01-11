@@ -4,7 +4,7 @@ COPY ./8/SiloHost/SiloHost.csproj /src/SiloHost/SiloHost.csproj
 COPY ./8/SiloHost/src/* /src/SiloHost/
 COPY ./8/SiloHost/appsettings.json /src/SiloHost/
 
-COPY ./8Interfaces/Interfaces.csproj /src/Interfaces/Interfaces.csproj
+COPY ./8/Interfaces/Interfaces.csproj /src/Interfaces/Interfaces.csproj
 COPY ./8/Interfaces/src/* /src/Interfaces/
 
 COPY ./8/Grains/Grains.csproj /src/Grains/Grains.csproj
