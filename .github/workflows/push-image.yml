@@ -28,7 +28,7 @@ jobs:
 
       - name: Run tests
         run: |
-            docker build . --file 8/ops/SiloHost/Dockerfile
+            docker build -f ./ops/SiloHost/Dockerfile
   # Push image to GitHub Packages.
   # See also https://docs.docker.com/docker-hub/builds/
   push:
