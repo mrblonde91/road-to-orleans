@@ -1,10 +1,10 @@
-name: Build Silo Host
+name: Push Silo Host
 
 on:
   push:
     # Publish `main` as Docker `latest` image.
     branches:
-      - feature/solution8docker 
+      - main
 
     # Publish `v1.2.3` tags as releases.
     tags:
