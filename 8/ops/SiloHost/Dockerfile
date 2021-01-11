@@ -14,7 +14,7 @@ COPY ./8/Library/* /src/Library/
 
 COPY ./8/ops/SiloHost/entrypoint.sh /SiloHost/
 
-RUN dotnet publish --verbosity normal "./8/src/SiloHost/SiloHost.csproj" --configuration Release --output /SiloHost
+RUN dotnet publish --verbosity normal "/src/SiloHost/SiloHost.csproj" --configuration Release --output /SiloHost
 
 EXPOSE 3000 8080
 
