@@ -88,13 +88,13 @@ namespace SiloHost
         private static SiloEndpointConfiguration GetSiloEndpointConfiguration(string idAddr)
         {
             SiloEndpointConfiguration result = null;
-            if (!string.IsNullOrWhiteSpace(idAddr))
-            {
-                return new SiloEndpointConfiguration(
-                    idAddr,
-                    2000,
-                    3000);
-            }
+            // if (!string.IsNullOrWhiteSpace(idAddr))
+            // {
+            //     return new SiloEndpointConfiguration(
+            //         idAddr,
+            //         2000,
+            //         3000);
+            // }
 
             IPAddress advertisedIpAddress = IPAddress.Parse(EC2InstanceMetadata.PrivateIpAddress);
 
