@@ -45,13 +45,15 @@ namespace SiloHost
                         dashboardOptions.Port = dashboardPort;
                     });
 
+                    siloBuilder.UseDevelopmentClustering(new IPEndPoint(siloEndpointConfiguration.Ip,
+                        siloEndpointConfiguration.SiloPort));
                     //Register silo with dynamo cluster
-                    siloBuilder.UseDynamoDBClustering(builder =>
-                    {
-                        //Connect to membership table in dynamo
-                        builder.TableName = membershipTable;
-                        builder.Service = awsRegion;
-                    });
+                    // siloBuilder.UseDynamoDBClustering(builder =>
+                    // {
+                    //     //Connect to membership table in dynamo
+                    //     builder.TableName = membershipTable;
+                    //     builder.Service = awsRegion;
+                    // });
                     siloBuilder.Configure<ClusterOptions>(clusterOptions =>
                     {
                         clusterOptions.ClusterId = "cluster-of-silos";
