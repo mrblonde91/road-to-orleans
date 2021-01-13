@@ -24,16 +24,7 @@ namespace SiloHost
         {
             var advertisedIp = Environment.GetEnvironmentVariable("ADVERTISEDIP");
             var siloEndpointConfiguration = GetSiloEndpointConfiguration(advertisedIp);
-
-            var extractDashboardPort = Environment.GetEnvironmentVariable("DASHBOARDPORT") ??
-                                       throw new Exception("Dashboard port cannot be null");
-            var awsRegion = Environment.GetEnvironmentVariable("AWSREGION") ??
-                            throw new Exception("Aws region cannot be null");
-            var membershipTable = Environment.GetEnvironmentVariable("MEMBERSHIPTABLE") ??
-                                  throw new Exception("Membership table cannot be null");
-
-            var dashboardPort = int.Parse(extractDashboardPort);
-
+            
             return new HostBuilder()
                 .UseOrleans(siloBuilder =>
                 {
@@ -42,7 +33,7 @@ namespace SiloHost
                     {
                         dashboardOptions.Username = "piotr";
                         dashboardOptions.Password = "orleans";
-                        dashboardOptions.Port = dashboardPort;
+                        dashboardOptions.Port = 8081;
                     });
 
                     siloBuilder.UseDevelopmentClustering(new IPEndPoint(siloEndpointConfiguration.Ip,
